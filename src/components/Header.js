@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 
 import headerImg from '../assets/header.jpg';
 
+
 const Header = () => {
   return (
     <HeaderImage>
@@ -32,9 +33,27 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h1`
-  font-size: 50px;
+  font-size: 30px;
+  font-family: 'Dancing Script', cursive;
+
+  @media (min-width: 768px) {
+    font-size: 50px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 60px;
+  }
 `;
 
 const SubTitle = styled.h2`
-  font-size: 30px;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+
+  @media (min-width: 768px) {
+    font-size: 25px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 30px;
+  }
 `;
