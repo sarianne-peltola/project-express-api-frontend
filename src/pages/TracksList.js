@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import styled from "styled-components/macro";
 
+import trackImg from '../assets/track.jpg'
+
 const TracksList = () => {
   const [tracks, setTracks] = useState([]);
 
@@ -20,8 +22,9 @@ const TracksList = () => {
       {tracks.map((track) => (
         <Track key={track.id}>
           <StyledLink to={`/tracks/${track.id}`}>
-            <h2>{track.trackName}</h2>
-            <h3>{track.artistName}</h3>
+            <img src={trackImg} width="250" height="180" object-fit="cover" alt="vinyl" />
+            <TrackName>{track.trackName}</TrackName>
+            <ArtistName>{track.artistName}</ArtistName>
           </StyledLink>
         </Track>
       ))}
@@ -39,8 +42,9 @@ const Container = styled.div`
 
 const Track = styled.div`
   border: 1px solid black;
-  width: 300px;
+  width: 250px;
   height: 300px;
+  margin: 10px;
 `
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -50,6 +54,16 @@ const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
+`
+const TrackName = styled.h2`
+  margin: 15px;
+  font-size: 18px;
+`
+const ArtistName = styled.h4`
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #aa9cf1;
+  
 `
